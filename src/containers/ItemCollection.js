@@ -1,13 +1,29 @@
 import React from 'react'
-import ItemCard from '../components/ItemCard'
 
 export default function ItemCollection(props) {
-    const itemCards = props.allItems.map( item => (
-        <ItemCard item={item}/>
-    ))
+    
     return (
         <div>
-            {itemCards}
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Cost</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {props.allItems.map(item => (
+                    
+                    <tr>
+                        <td>{item.name}</td>
+                        <td>${parseFloat(item.price).toFixed(2)}</td>
+                        <td>{item.category}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+       
+    </div>
     )
 }
