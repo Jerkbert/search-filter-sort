@@ -9,13 +9,13 @@ export default class ItemSearch extends Component {
         this.setState({
             input: event.target.value
         }, () => {
-            this.props.filter(this.state.input)
+            this.props.search(this.state.input)
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.filter(this.state.input)
+        this.props.search(this.state.input)
     }
     render() {
         return (

@@ -126,7 +126,7 @@ export default class App extends Component {
   render(){
     return (
       <div className="App">
-        <ItemSearch filter={this.setSearchFilter}/> 
+        <ItemSearch search={this.setSearchFilter}/> 
         <ItemFilterSort filter={this.filterByCategory} sortItems={this.sortItems}/>
         <ItemCollection allItems={this.state.displayItems}/>
       </div>
