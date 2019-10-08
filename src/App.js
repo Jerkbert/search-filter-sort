@@ -95,10 +95,10 @@ export default class App extends Component {
     let sortedItems = []
     switch(sortBy){
       case "A-Z":
-        sortedItems = this.state.displayItems.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
+        sortedItems = this.state.displayItems.sort((a,b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
         break
       case "Price":
-        sortedItems = this.state.displayItems.sort((a,b) => a.price > b.price ? 1 : -1)
+        sortedItems = this.state.displayItems.sort((a,b) => a.price - b.price)
         break
       default:
         console.log("not an option")
@@ -127,7 +127,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <ItemSearch search={this.setSearchFilter}/> 
-        <ItemFilterSort filter={this.filterByCategory} sortItems={this.sortItems}/>
+        <ItemFilterSort filterByCategory={this.filterByCategory} sortItems={this.sortItems}/>
         <ItemCollection allItems={this.state.displayItems}/>
       </div>
     );

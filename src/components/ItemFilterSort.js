@@ -13,7 +13,7 @@ export default function ItemFilterSort(props) {
             </label>
             <br/>
             <label>Filter by Category</label>
-                <select onChange={(event) => props.filter(event.target.value)}>
+                <select onChange={(event) => props.filterByCategory(event.target.value)}>
                     <option value="All">All</option>
                     <option value="Rum">Rum</option>
                     <option value="Tequila">Tequila</option>
